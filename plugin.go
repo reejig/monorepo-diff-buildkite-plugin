@@ -25,6 +25,11 @@ type Plugin struct {
 // HookConfig Plugin hook configuration
 type HookConfig struct {
 	Command string
+	Agents  Queue
+}
+
+type Queue struct {
+	Queue string
 }
 
 // WatchConfig Plugin watch configuration

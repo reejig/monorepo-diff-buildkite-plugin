@@ -156,6 +156,7 @@ func generatePipeline(steps []Step, plugin Plugin) (*os.File, error) {
 
 	for _, cmd := range plugin.Hooks {
 		data = append(data, "\n- command: "+cmd.Command...)
+		data = append(data, "\n- agents: \n    queue: "+cmd.Agents.Queue...)
 	}
 
 	// Disable logging in context of go tests.
